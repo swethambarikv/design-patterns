@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Users</h1>
+  <ul class="list-group" *ngIf="users.length > 0">
+    <li class="list-group-item" *ngFor="let user of users">
+      {{ user.name }}
+      <button class="btn btn-primary" (click)="selectUser(user.id)">Select</button>
+    </li>
+  </ul>
+  <p class="alert alert-info" *ngIf="users.length === 0">No users found.</p>
+
+  <h2>Selected User</h2>
+  <pre class="alert alert-success" *ngIf="selectedUser">{{ selectedUser?.name }}</pre>
+
+  <h1>Products</h1>
+  <ul class="list-group" *ngIf="products.length > 0">
+    <li class="list-group-item" *ngFor="let product of products">
+      {{ product.title }} (${{ product.price }})
+      <button class="btn btn-primary" (click)="selectProduct(product.id)">Select</button>
+    </li>
+  </ul>
+  <p class="alert alert-info" *ngIf="products.length === 0">No products found.</p>
+</div>
